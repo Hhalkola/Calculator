@@ -1,0 +1,142 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <StackPanel>
+            <!--Näyttö-->
+            <Grid Margin="0,40,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <TextBox x:Name="TxtNaytto" IsReadOnly="True" TextAlignment="Right" FontSize="18"></TextBox>
+            </Grid>
+            <!--Tyhjää, kerto, jako, pyyhi-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <!--Tyhjää-->
+                <Grid>
+                    <Button x:Name="BtnTyhjaa" Click="BtnTyhjaa_Click">C</Button>
+                </Grid>
+                <!--Jako-->
+                <Grid Grid.Column="1">
+                    <Button x:Name="BtnJako" Click="BtnJako_Click">/</Button>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button x:Name="BtnKerto" Click="BtnKerto_Click">*</Button>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Button x:Name="BtnPyyhi" Click="BtnPyyhi_Click">Pyyhi</Button>
+                </Grid>
+            </Grid>
+
+            <!--7,8,9,miinus-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Button x:Name="Btn7" Click="Btn7_Click">7</Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button x:Name="Btn8" Click="Btn8_Click">8</Button>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button x:Name="Btn9" Click="Btn9_Click">9</Button>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Button x:Name="BtnMiinus" Click="BtnMiinus_Click">Miinus</Button>
+                </Grid>
+            </Grid>
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Button x:Name="Btn4" Click="Btn4_Click">4</Button>
+                </Grid>
+                <!--Jako-->
+                <Grid Grid.Column="1">
+                    <Button x:Name="Btn5" Click="Btn5_Click">5</Button>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button x:Name="Btn6" Click="Btn6_Click">6</Button>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Button x:Name="BtnPlus" Click="BtnPlus_Click">Plus</Button>
+                </Grid>
+                
+            </Grid>
+            <!--1,2,3, pilkku-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Button x:Name="Btn1" Click="Btn1_Click">1</Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button x:Name="Btn2" Click="Btn2_Click">2</Button>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button x:Name="Btn3" Click="Btn3_Click">3</Button>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Button x:Name="BtnYhtaKuin" Click="BtnYhtaKuin_Click">=</Button>
+                </Grid>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="1">
+                    <Button x:Name="Btn0" Click="Btn0_Click">0</Button>
+                </Grid>
+                <!--Jako-->
+                <Grid Grid.Column="2">
+                    <Button x:Name="BtnPilkku" Click="BtnPilkku_Click">Pilkku</Button>
+                </Grid>
+
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
