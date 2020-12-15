@@ -5,7 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
+        Background="#3d3c3a"
         Title="MainWindow" Height="450" Width="400">
+        <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Background" Value="#1f1e1d"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        </Window.Resources>
+        
     <Grid>
         <StackPanel>
             <!--Näyttö-->
@@ -13,15 +22,21 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
-                <TextBox x:Name="TxtNaytto" IsReadOnly="True" TextAlignment="Right" FontSize="18"></TextBox>
+                <TextBox x:Name="TxtNaytto" 
+                         IsReadOnly="True" 
+                         TextAlignment="Right" 
+                         FontSize="24"
+                         Foreground="White"
+                         FontWeight="Bold"
+                         Background="#3d3c3a"></TextBox>
             </Grid>
             <!--Tyhjää, kerto, jako, pyyhi-->
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
@@ -45,10 +60,10 @@
             <!--7,8,9,miinus-->
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
@@ -63,16 +78,16 @@
                     <Button x:Name="Btn9" Click="Btn9_Click">9</Button>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <Button x:Name="BtnMiinus" Click="BtnMiinus_Click">Miinus</Button>
+                    <Button x:Name="BtnMiinus" Click="BtnMiinus_Click">-</Button>
                 </Grid>
             </Grid>
             
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
@@ -88,17 +103,17 @@
                     <Button x:Name="Btn6" Click="Btn6_Click">6</Button>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <Button x:Name="BtnPlus" Click="BtnPlus_Click">Plus</Button>
+                    <Button x:Name="BtnPlus" Click="BtnPlus_Click">+</Button>
                 </Grid>
                 
             </Grid>
             <!--1,2,3, pilkku-->
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
@@ -119,20 +134,26 @@
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
+                <Grid Grid.Column="0">
+                    <Button></Button>
+                </Grid>
                 <Grid Grid.Column="1">
                     <Button x:Name="Btn0" Click="Btn0_Click">0</Button>
                 </Grid>
                 <!--Jako-->
                 <Grid Grid.Column="2">
-                    <Button x:Name="BtnPilkku" Click="BtnPilkku_Click">Pilkku</Button>
+                    <Button x:Name="BtnPilkku" Click="BtnPilkku_Click">,</Button>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Button ></Button>
                 </Grid>
 
 
