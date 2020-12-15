@@ -9,6 +9,7 @@ namespace Calculator
     /// Numeronäppäimissä käytetään perinteistä click - eventtiä, missä näppäintä painettaessa merkkijonon perään lisätään haluttu numero
     /// Operaattoreissa *,/,-,+ kutsutaan funktiota, missä tarkistetaan merkkijonon viimeinen merkki. Jos merkkijono päättyy operaattoriin, muutetaan se
     /// Muussa tapauksessa lisätään operaattori merkkijonon perään
+    /// 
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -131,9 +132,13 @@ namespace Calculator
         {
             //Jos merkkijonossa viimeisenä on operaattori tai pilkku, ei tehdä mitään, sillä tästä tulee virhe. 
             //Jos viimeinen merkki on numero, lisätään pilkku
-            if (OnkoViimeinenMerkkiOperaattoriTaiPilkku(TxtNaytto.Text) == false)
+            if (OnkoViimeinenMerkkiOperaattoriTaiPilkku(TxtNaytto.Text))
             {
-                TxtNaytto.AppendText(",");
+                TxtNaytto.Text = MuunnaViimeinenMerkki(TxtNaytto.Text, ".");
+            }
+            else
+            {
+                TxtNaytto.AppendText(".");
             }
         }
 
@@ -143,7 +148,7 @@ namespace Calculator
             bool retval;
 
             //Tarkistetaan onko viimeinen merkki operaattori
-            if (txt.EndsWith("/") || txt.EndsWith("*") || txt.EndsWith("-") || txt.EndsWith("+") || txt.EndsWith(","))
+            if (txt.EndsWith("/") || txt.EndsWith("*") || txt.EndsWith("-") || txt.EndsWith("+") || txt.EndsWith("."))
             {
                 retval = true;
             }
@@ -157,21 +162,20 @@ namespace Calculator
         //Muutetaan merkkijonon viimeinen merkki halutuksi operaattoriksi tarvittaessa
         private static string MuunnaViimeinenMerkki(string txt, string operaattori)
         {
-            string retval;
-
-            retval = txt.Substring(0, txt.Length - 1) + operaattori;
+            string retval = txt.Substring(0, txt.Length - 1) + operaattori;
 
             return retval;
         }
 
         //Itse laskutoimituksen laskeminen
-        //Lähde https://stackoverflow.com/questions/21950093/string-calculator
         private static string TeeLaskuToimitus(string laskutoimitus)
         {
-            string retval = "";
+            //Määritetään paluuarvoksi syötetty laskutoimitus. Jos tulee virhe, näytölle jää syötetty laskutoimitus valmiiksi
+            string retval = laskutoimitus;
 
             try
             {
+                //Lähde https://stackoverflow.com/questions/21950093/string-calculator
                 retval = new DataTable().Compute(laskutoimitus, null).ToString();
             }
             catch (Exception)
@@ -181,6 +185,7 @@ namespace Calculator
             return retval;
         }
         
+        //Tänne tullaan = - nappia painettaessa
         private void BtnYhtaKuin_Click(object sender, RoutedEventArgs e)
         {
             TxtNaytto.Text = TeeLaskuToimitus(TxtNaytto.Text);

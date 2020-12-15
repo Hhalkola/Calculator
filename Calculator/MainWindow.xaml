@@ -27,7 +27,7 @@
                          TextAlignment="Right" 
                          FontSize="24"
                          Foreground="White"
-                         FontWeight="Bold"
+                         FontWeight="DemiBold"
                          Background="#3d3c3a"></TextBox>
             </Grid>
             <!--Tyhjää, kerto, jako, pyyhi-->
