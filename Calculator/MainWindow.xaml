@@ -41,11 +41,9 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
-                <!--Tyhjää-->
                 <Grid>
                     <Button x:Name="BtnTyhjaa" Click="BtnTyhjaa_Click">C</Button>
                 </Grid>
-                <!--Jako-->
                 <Grid Grid.Column="1">
                     <Button x:Name="BtnJako" Click="BtnJako_Click">/</Button>
                 </Grid>
@@ -81,7 +79,7 @@
                     <Button x:Name="BtnMiinus" Click="BtnMiinus_Click">-</Button>
                 </Grid>
             </Grid>
-            
+            <!--4,5,6,+-->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100*"/>
@@ -95,7 +93,6 @@
                 <Grid>
                     <Button x:Name="Btn4" Click="Btn4_Click">4</Button>
                 </Grid>
-                <!--Jako-->
                 <Grid Grid.Column="1">
                     <Button x:Name="Btn5" Click="Btn5_Click">5</Button>
                 </Grid>
@@ -107,7 +104,7 @@
                 </Grid>
                 
             </Grid>
-            <!--1,2,3, pilkku-->
+            <!--1,2,3, =-->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100*"/>
@@ -131,7 +128,7 @@
                     <Button x:Name="BtnYhtaKuin" Click="BtnYhtaKuin_Click">=</Button>
                 </Grid>
             </Grid>
-
+            <!--0, ,-->
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100*"/>
@@ -148,15 +145,12 @@
                 <Grid Grid.Column="1">
                     <Button x:Name="Btn0" Click="Btn0_Click">0</Button>
                 </Grid>
-                <!--Jako-->
                 <Grid Grid.Column="2">
                     <Button x:Name="BtnPilkku" Click="BtnPilkku_Click">,</Button>
                 </Grid>
                 <Grid Grid.Column="3">
                     <Button ></Button>
                 </Grid>
-
-
             </Grid>
         </StackPanel>
     </Grid>
